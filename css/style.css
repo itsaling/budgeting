@@ -1,0 +1,79 @@
+body {
+  background-image: linear-gradient(-20deg, #00b7ff, #ffffc7);
+  height: 100vh;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: Center;
+      -ms-flex-pack: Center;
+          justify-content: Center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 5em;
+  font-weight: 100;
+}
+
+.container {
+  text-align: center;
+}
+
+.container #expenses {
+  background: #1ba9ad;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  border-radius: 60px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.6em;
+}
+
+.container #expenses:focus {
+  outline: none;
+}
+
+img {
+  width: 60px;
+  margin: 18px 0 0 20px;
+  position: absolute;
+}
+
+#addBtn:hover {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+  }
+}
+/*# sourceMappingURL=style.css.map */

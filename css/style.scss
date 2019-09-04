@@ -1,0 +1,54 @@
+body {
+  background-image: linear-gradient(-20deg, #00b7ff, #ffffc7);
+  height: 100vh;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: Center;
+}
+h1 {
+  color: #fff;
+  font-size: 5em;
+  font-weight: 100;
+}
+.container {
+  text-align: center;
+  #expenses {
+    background: rgb(27, 169, 173);
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    border-radius: 60px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.6em;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+img {
+  width: 60px;
+  margin: 18px 0 0 20px;
+  position: absolute;
+}
+#addBtn:hover {
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: none;
+}
+.pulse {
+  // animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.6);
+  }
+}
