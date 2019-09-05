@@ -11,9 +11,6 @@
     <div id="container">
       <h3 id="totalAmount">
         Total:
-        <script>
-          displayTotal();
-        </script>
       </h3>
       <div id="add" class="collapsible">
         <span id="addBtn">+</span>
@@ -65,15 +62,15 @@
 
       function addition() {
         total = total + parseFloat(addAmount.value);
+        document.getElementById("totalAmount").innerHTML =
+          "You total is: " + total;
         alert("$" + total);
       }
       function subtract() {
         total -= subAmount.value;
-        alert("$" + total);
-      }
-      function displayTotal() {
         document.getElementById("totalAmount").innerHTML =
           "You total is: " + total;
+        alert("$" + total);
       }
     </script>
   </body>
