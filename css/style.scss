@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 body {
   background-image: linear-gradient(-20deg, #00b7ff, #ffffc7);
   height: 100vh;
   margin: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: grid;
   align-items: center;
   justify-content: Center;
@@ -24,10 +26,22 @@ h1 {
     color: #fff;
     cursor: pointer;
     font-size: 1.6em;
+    font-family: "Montserrat", sans-serif;
+    transition: width 1s ease;
 
     &:focus {
       outline: none;
     }
+    &::placeholder {
+      color: #fff;
+    }
+  }
+  p {
+    color: rgb(14, 99, 102);
+    visibility: hidden;
+    text-align: right;
+    opacity: 0;
+    transition: opacity 2s;
   }
 }
 img {
@@ -41,14 +55,22 @@ img {
   cursor: pointer;
   animation: none;
 }
-.pulse {
-  // animation: pulse 2s infinite;
+.expenseContainer:before {
+  content: "";
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  border: 4px solid rgb(14, 99, 102);
+  position: absolute;
+  animation: grow 2s infinite;
 }
-@keyframes pulse {
+
+@keyframes grow {
   from {
     transform: scale(1);
   }
   to {
     transform: scale(1.6);
+    opacity: 0;
   }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="budgetCSS/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h3 id="totalAmount">
+        Total:
+        <script>
+          displayTotal();
+        </script>
+      </h3>
+      <div id="add" class="collapsible">
+        <span id="addBtn">+</span>
+        <input id="addAmount" type="number" placeholder="" />
+        <p id="addtip">ENTER to calculate</p>
+      </div>
+      <div id="sub" class="collapsible">
+        <span id="subBtn">-</span>
+        <input id="subAmount" type="number" placeholder="" />
+        <p id="subtip">ENTER to calculate</p>
+      </div>
+    </div>
+    <script>
+      const addContainer = document.getElementById("add");
+      const subContainer = document.getElementById("sub");
+      const container = document.getElementById("container");
+      var addAmount = document.getElementById("addAmount");
+      const subAmount = document.getElementById("subAmount");
+      const addtip = document.getElementById("addtip");
+      const subtip = document.getElementById("subtip");
+
+      var total = 0;
+
+      addContainer.addEventListener("click", () => {
+        addContainer.style.flex = "0 0 100%";
+        addAmount.style.visibility = "visible";
+        addAmount.style.opacity = "1";
+      });
+      addAmount.addEventListener("keydown", () => {
+        addtip.style.opacity = "1";
+        addtip.style.visibility = "visible";
+        if (event.keyCode === 13) {
+          addition();
+          addAmount.value = "";
+        }
+      });
+      subContainer.addEventListener("click", () => {
+        subContainer.style.flex = "0 0 100%";
+        subAmount.style.visibility = "visible";
+        subAmount.style.opacity = "1";
+      });
+      subAmount.addEventListener("keydown", () => {
+        subtip.style.opacity = "1";
+        subtip.style.visibility = "visible";
+        if (event.keyCode === 13) {
+          subtract();
+        }
+      });
+
+      function addition() {
+        total = total + parseFloat(addAmount.value);
+        alert("$" + total);
+      }
+      function subtract() {
+        total -= subAmount.value;
+        alert("$" + total);
+      }
+      function displayTotal() {
+        document.getElementById("totalAmount").innerHTML =
+          "You total is: " + total;
+      }
+    </script>
+  </body>
+</html>

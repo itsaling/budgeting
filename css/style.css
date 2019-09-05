@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 body {
   background-image: linear-gradient(-20deg, #00b7ff, #ffffc7);
   height: 100vh;
   margin: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -33,10 +34,38 @@ h1 {
   color: #fff;
   cursor: pointer;
   font-size: 1.6em;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
 }
 
 .container #expenses:focus {
   outline: none;
+}
+
+.container #expenses::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.container #expenses:-ms-input-placeholder {
+  color: #fff;
+}
+
+.container #expenses::-ms-input-placeholder {
+  color: #fff;
+}
+
+.container #expenses::placeholder {
+  color: #fff;
+}
+
+.container p {
+  color: #0e6366;
+  visibility: hidden;
+  text-align: right;
+  opacity: 0;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
 }
 
 img {
@@ -55,7 +84,18 @@ img {
           animation: none;
 }
 
-@-webkit-keyframes pulse {
+.expenseContainer:before {
+  content: "";
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  border: 4px solid #0e6366;
+  position: absolute;
+  -webkit-animation: grow 2s infinite;
+          animation: grow 2s infinite;
+}
+
+@-webkit-keyframes grow {
   from {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -63,10 +103,11 @@ img {
   to {
     -webkit-transform: scale(1.6);
             transform: scale(1.6);
+    opacity: 0;
   }
 }
 
-@keyframes pulse {
+@keyframes grow {
   from {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -74,6 +115,7 @@ img {
   to {
     -webkit-transform: scale(1.6);
             transform: scale(1.6);
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

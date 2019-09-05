@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+$font: "Lato", sans-serif;
+body {
+  margin: 0;
+  font-family: $font;
+}
+h3 {
+  position: absolute;
+}
+#container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  #add {
+    flex: 1;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    background: linear-gradient(10deg, #5c5fc2, #91ffff);
+    color: #000357;
+    opacity: 0.8;
+    transition: all 0.5s ease-in;
+
+    &:hover {
+      //   flex: 4;
+      cursor: pointer;
+      #addBtn {
+        animation: shrink 1.3s infinite;
+      }
+    }
+  }
+  #sub {
+    flex: 1;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    background: linear-gradient(10deg, #d74177, #ffe98a);
+    color: #79002c;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+    &:hover {
+      //   flex: 4;
+      cursor: pointer;
+      #subBtn {
+        animation: shrink 1.3s infinite;
+      }
+    }
+  }
+  span {
+    font-size: 10em;
+  }
+}
+input {
+  visibility: hidden;
+  font-size: 2.5em;
+  text-align: center;
+  opacity: 0;
+  transition: all 2s ease;
+  color: #000357;
+  border-width: 0 0 2px;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  &:focus {
+    border-color: #000357;
+  }
+  font-family: $font;
+}
+p {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}

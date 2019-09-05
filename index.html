@@ -10,8 +10,44 @@
   <body>
     <div class="container">
       <h1>Enter Amount</h1>
-      <img id="addBtn" class="pulse" src="assets/add-button.png" alt="" />
-      <input id="expenses" type="text" />
+      <div class="expenseContainer">
+        <img id="addBtn" class="pulse" src="assets/add-button.png" alt="" />
+        <input id="expenses" type="text" placeholder="" />
+        <p id="tip">ENTER to add expenses</p>
+      </div>
     </div>
+
+    <script>
+      const addBtn = document.getElementById("addBtn");
+      const expenseBox = document.getElementById("expenses");
+      const expenseContainer = document.getElementById("expenseContainer");
+      const tip = document.getElementById("tip");
+      var i = 0;
+      var message = "This is the amount to put in";
+      var speed = 200;
+      addBtn.addEventListener("click", () => {
+        expenseBox.style.width = "80%";
+        expenseBox.style.paddingLeft = "90px";
+        expenseBox.style.cursor = "text";
+        expenseContainer.animation = "";
+        expenseBox.focus();
+
+        typeWriter();
+
+        function typeWriter() {
+          if (i < message.length) {
+            msg = expenseBox.getAttribute("placeholder") + message.charAt(i);
+            expenseBox.setAttribute("placeholder", msg);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+      });
+
+      expenseBox.addEventListener("keydown", () => {
+        tip.style.visibility = "visible";
+        tip.style.opacity = "1";
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+h3 {
+  position: absolute;
+  text-align: right;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#container #add {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: linear-gradient(10deg, #5c5fc2, #91ffff);
+  color: #000357;
+  opacity: 0.8;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+#container #add:hover {
+  cursor: pointer;
+}
+
+#container #add:hover #addBtn {
+  -webkit-animation: shrink 1.3s infinite;
+          animation: shrink 1.3s infinite;
+}
+
+#container #sub {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: linear-gradient(10deg, #d74177, #ffe98a);
+  color: #79002c;
+  opacity: 0.8;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#container #sub:hover {
+  cursor: pointer;
+}
+
+#container #sub:hover #subBtn {
+  -webkit-animation: shrink 1.3s infinite;
+          animation: shrink 1.3s infinite;
+}
+
+#container span {
+  font-size: 10em;
+}
+
+input {
+  visibility: hidden;
+  font-size: 2.5em;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+  color: #000357;
+  border-width: 0 0 2px;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Lato", sans-serif;
+}
+
+input:focus {
+  border-color: #000357;
+}
+
+p {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+@-webkit-keyframes shrink {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+@keyframes shrink {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+/*# sourceMappingURL=main.css.map */
