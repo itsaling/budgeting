@@ -4,8 +4,13 @@ body {
   margin: 0;
   font-family: $font;
 }
-h3 {
+h1 {
+  font-size: 4em;
+}
+h2 {
   position: absolute;
+  text-align: center;
+  padding: 1em;
 }
 #container {
   display: flex;
@@ -21,13 +26,28 @@ h3 {
     background: linear-gradient(10deg, #5c5fc2, #91ffff);
     color: #000357;
     opacity: 0.8;
-    transition: all 0.5s ease-in;
+    transition: all 0.8s ease-in;
+
+    #addBtn {
+      width: 20%;
+      animation: shrink 1.5s infinite;
+      // transition: all 2s ease;
+    }
 
     &:hover {
-      //   flex: 4;
       cursor: pointer;
       #addBtn {
-        animation: shrink 1.3s infinite;
+        animation: paused;
+      }
+    }
+    #backBtn {
+      width: 5%;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 1s ease;
+      &:hover {
+        transform: scale(0.5);
+        transition: 0.5s;
       }
     }
   }
@@ -41,11 +61,13 @@ h3 {
     color: #79002c;
     opacity: 0.8;
     transition: all 0.5s ease;
+    #subBtn {
+      width: 20%;
+    }
     &:hover {
-      //   flex: 4;
       cursor: pointer;
       #subBtn {
-        animation: shrink 1.3s infinite;
+        // animation: shrink 1.3s infinite;
       }
     }
   }
@@ -58,7 +80,7 @@ input {
   font-size: 2.5em;
   text-align: center;
   opacity: 0;
-  transition: all 2s ease;
+  transition: opacity 2s ease;
   color: #000357;
   border-width: 0 0 2px;
   outline: 0;
@@ -76,7 +98,7 @@ p {
 
 @keyframes shrink {
   from {
-    transform: scale(1);
+    transform: scale(0.8);
   }
   to {
     transform: scale(0.5);

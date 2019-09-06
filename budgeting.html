@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="budgetCSS/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <title>Document</title>
   </head>
   <body>
     <div id="container">
-      <h3 id="totalAmount">
-        Total:
-      </h3>
+      <h2 id="totalAmount">
+      </h2>
       <div id="add" class="collapsible">
-        <span id="addBtn">+</span>
-        <input id="addAmount" type="number" placeholder="" />
+        <img id="addBtn" src="/assets/add-button.png"></img>
+        <h1>Add Your Income</h1>
+        <input id="addAmount" type="number" placeholder="" autofocus />
         <p id="addtip">ENTER to calculate</p>
+        <img id="backBtn" src="/assets/back-arrow.png" alt="" />
       </div>
       <div id="sub" class="collapsible">
-        <span id="subBtn">-</span>
-        <input id="subAmount" type="number" placeholder="" />
+        <img id="subBtn" src="/assets/minus-button.png"></img>
+        <input id="subAmount" type="number" placeholder="" autofocus />
         <p id="subtip">ENTER to calculate</p>
       </div>
     </div>
     <script>
       const addContainer = document.getElementById("add");
       const subContainer = document.getElementById("sub");
+      const backBtn = document.getElementById("backBtn");
+      const addBtn = document.getElementById("addBtn");
       const container = document.getElementById("container");
       var addAmount = document.getElementById("addAmount");
       const subAmount = document.getElementById("subAmount");
@@ -38,6 +42,9 @@
         addContainer.style.flex = "0 0 100%";
         addAmount.style.visibility = "visible";
         addAmount.style.opacity = "1";
+        addBtn.style.display ="none";
+        backBtn.style.opacity = "1";
+        backBtn.style.visibility = "visible";
       });
       addAmount.addEventListener("keydown", () => {
         addtip.style.opacity = "1";
@@ -47,8 +54,11 @@
           addAmount.value = "";
         }
       });
+      backBtn.addEventListener("click", ()=>{
+        
+      })
       subContainer.addEventListener("click", () => {
-        subContainer.style.flex = "0 0 100%";
+        subContainer.style.flex = "0 0 90%";
         subAmount.style.visibility = "visible";
         subAmount.style.opacity = "1";
       });
@@ -62,16 +72,20 @@
 
       function addition() {
         total = total + parseFloat(addAmount.value);
-        document.getElementById("totalAmount").innerHTML =
-          "You total is: " + total;
-        alert("$" + total);
+        getTotal();
       }
       function subtract() {
         total -= subAmount.value;
+        getTotal();        
+      }
+      function getTotal(){
         document.getElementById("totalAmount").innerHTML =
-          "You total is: " + total;
-        alert("$" + total);
+          "&nbsp; Your spending is: $" + total;
+        TweenMax.to(totalAmount, 2, {right:"0"});
+
       }
     </script>
+
+    <!-- LOAD TWEEN JS -->
   </body>
 </html>

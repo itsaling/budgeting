@@ -4,9 +4,14 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-h3 {
+h1 {
+  font-size: 4em;
+}
+
+h2 {
   position: absolute;
-  text-align: right;
+  text-align: center;
+  padding: 1em;
 }
 
 #container {
@@ -31,8 +36,14 @@ h3 {
   background: linear-gradient(10deg, #5c5fc2, #91ffff);
   color: #000357;
   opacity: 0.8;
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+}
+
+#container #add #addBtn {
+  width: 20%;
+  -webkit-animation: shrink 1.5s infinite;
+          animation: shrink 1.5s infinite;
 }
 
 #container #add:hover {
@@ -40,8 +51,23 @@ h3 {
 }
 
 #container #add:hover #addBtn {
-  -webkit-animation: shrink 1.3s infinite;
-          animation: shrink 1.3s infinite;
+  -webkit-animation: paused;
+          animation: paused;
+}
+
+#container #add #backBtn {
+  width: 5%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+#container #add #backBtn:hover {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #container #sub {
@@ -61,13 +87,12 @@ h3 {
   transition: all 0.5s ease;
 }
 
-#container #sub:hover {
-  cursor: pointer;
+#container #sub #subBtn {
+  width: 20%;
 }
 
-#container #sub:hover #subBtn {
-  -webkit-animation: shrink 1.3s infinite;
-          animation: shrink 1.3s infinite;
+#container #sub:hover {
+  cursor: pointer;
 }
 
 #container span {
@@ -79,8 +104,8 @@ input {
   font-size: 2.5em;
   text-align: center;
   opacity: 0;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
+  -webkit-transition: opacity 2s ease;
+  transition: opacity 2s ease;
   color: #000357;
   border-width: 0 0 2px;
   outline: 0;
@@ -101,8 +126,8 @@ p {
 
 @-webkit-keyframes shrink {
   from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   to {
     -webkit-transform: scale(0.5);
@@ -112,8 +137,8 @@ p {
 
 @keyframes shrink {
   from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   to {
     -webkit-transform: scale(0.5);

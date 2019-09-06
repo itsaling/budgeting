@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+// CSS DECLARATIONS
+$addColor: #000357;
+$subColor: #79002c;
+$totalColor: #3b0057;
+$addBgGradient: linear-gradient(10deg, #5c5fc2, #91ffff);
+$subBgGradient: linear-gradient(10deg, #d74177, #ffe98a);
+$totalBgGradient: linear-gradient(10deg, #fca5f1, #b5ffff);
+$font: "Lato", sans-serif;
+//END CSS DECLARATIONS
+
+body {
+  margin: 0;
+  font-family: $font;
+  color: $addColor;
+}
+#container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#addContainer {
+  background: $addBgGradient;
+  height: 100vh;
+  opacity: 0.7;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  #addBtn {
+    width: 10%;
+    position: relative;
+  }
+  #backBtn {
+    width: 70px;
+    transform: translateY(400px);
+    position: relative;
+  }
+  #amountInput {
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    outline: 0;
+    border-width: 0 0 3px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 3em;
+    font-family: $font;
+  }
+  h1 {
+    position: relative;
+  }
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+}
+#subContainer {
+  background: $subBgGradient;
+  color: $subColor;
+  opacity: 0.7;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  #subBtn {
+    width: 10%;
+    position: relative;
+  }
+  #backBtnExpense {
+    width: 70px;
+    transform: translateY(400px);
+    position: relative;
+  }
+  #expenseInput {
+    position: relative;
+    text-align: center;
+    opacity: 0;
+    outline: 0;
+    border-width: 0 0 3px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 3em;
+    font-family: $font;
+  }
+  h1 {
+    position: relative;
+  }
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+}
+#totalContainer {
+  height: 100vh;
+  background: $totalBgGradient;
+  color: $totalColor;
+  display: grid;
+  justify-items: center;
+  align-self: center;
+  text-align: center;
+  #budgetTitle {
+    opacity: 0.2;
+    font-size: 4em;
+  }
+  #totalAmount {
+    font-size: 5em;
+  }
+}

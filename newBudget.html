@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/newBudget/budget.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>New budgeting</title>
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section " id="container">
+        <div class="slide">
+          <div id="addContainer">
+            <img id="addBtn" src="/assets/add-button.png" alt="" />
+            <h1 id="title">Enter Income</h1>
+            <input id="amountInput" type="number" />
+            <img id="backBtn" src="/assets/back-arrow.png" alt="" />
+          </div>
+        </div>
+        <div>
+          <div id="subContainer" class="silde">
+            <img id="subBtn" src="/assets/minus-button.png" alt="" />
+            <h1 id="subTitle">Enter Expenses</h1>
+            <input id="expenseInput" type="number" />
+            <img id="backBtnExpense" src="/assets/back-arrow.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="section" id="totalContainer">
+        <h1 id="budgetTitle">Your Budget</h1>
+        <p id="message"></p>
+        <h1 id="totalAmount">your total</h1>
+        <p id="spending"></p>
+      </div>
+    </div>
+    <!-- LOAD TWEEN SCRIPT HERE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css"></script>
+    <script src="/JS/script.js"></script>
+  </body>
+</html>
